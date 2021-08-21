@@ -16,12 +16,61 @@ body {
     color: #7c2f37;
     font-family: 'Zen Tokyo Zoo', serif;
     text-align: center;
-    font-size: 7em;
+    font-size: 6em;
     font-weight: normal;
+    margin-bottom: -50px;
+    margin-top: 10px;
+}
+
+.game-info-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .game-info {
-    color: #63262c;
+    color: black;
     font-family: 'Zen Tokyo Zoo', cursive;
     font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-gap: 10px;
+    margin: 50px;
+    justify-content: center;
+}
+
+.card {
+    height: 175px;
+    width: 125px;
+    position: relative;
+}
+
+.card-face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    border-width: 5px;
+    border-style: ridge;  
+}
+
+.card-back {
+    background-color: #7c2f37;
+    border-color: black;
+}
+
+.card-front {
+    transform: rotateX(180deg);
+}
+
+.card-back:hover .flying-ninja {
+    transform: rotate(360deg);
 }
