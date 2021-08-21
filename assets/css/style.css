@@ -1,3 +1,9 @@
 body {
-    background-color: red;
+    font-family: 'Zen Tokyo Zoo', cursive;
+    margin: 0;
+    background: radial-gradient(#96595f, #e4d4d5);
+}
+
+* {
+    box-sizing: border-box;
 }
