@@ -1,3 +1,7 @@
+html {
+    min-height: 100vh;
+}
+
 body {
     font-family: 'Zen Tokyo Zoo', cursive;
     margin: 0;
@@ -6,4 +10,18 @@ body {
 
 * {
     box-sizing: border-box;
+}
+
+.page-title {
+    color: #7c2f37;
+    font-family: 'Zen Tokyo Zoo', serif;
+    text-align: center;
+    font-size: 7em;
+    font-weight: normal;
+}
+
+.game-info {
+    color: #63262c;
+    font-family: 'Zen Tokyo Zoo', cursive;
+    font-size: 3em;
 }
