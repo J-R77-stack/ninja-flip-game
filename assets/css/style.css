@@ -41,6 +41,7 @@ body {
     grid-gap: 10px;
     margin: 50px;
     justify-content: center;
+    perspective: 500px;
 }
 
 .card {
@@ -60,6 +61,15 @@ body {
     border-radius: 15px;
     border-width: 5px;
     border-style: ridge;  
+    transition: transform 500ms ease-in-out;
+}
+
+.card.visible .card-back {
+    transform: rotateY(-180deg);
+}
+
+.card.visible .card-front {
+    transform: rotateY(0);
 }
 
 .card-back {
@@ -68,9 +78,17 @@ body {
 }
 
 .card-front {
-    transform: rotateX(180deg);
+    background-color: blanchedalmond;
+    border-color: black;
+    transform: rotateY(180deg);
+}
+
+.flying-ninja {
+    align-self: flex-start;
+    transform: translateY(-10);
+    transition: transform 100ms ease-in-out;
 }
 
 .card-back:hover .flying-ninja {
-    transform: rotate(360deg);
+    transform: translateY(0)
 }
