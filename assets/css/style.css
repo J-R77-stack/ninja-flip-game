@@ -95,8 +95,13 @@ body {
     font-family: 'Zen Tokyo Zoo', serif;
 }
 
+.overlay-text-small {
+    font-size: .5em;
+}
+
 .overlay-text.visible {
     display: flex;
+    flex-direction: column;
     animation: overlay-bigger 500ms forwards;
 }
 
@@ -140,4 +145,10 @@ body {
 
 .card-back:hover .flying-ninja {
     transform: rotate(360deg);
+}
+
+@media (max-width: 800px) {
+    .game-container {
+        grid-template-columns: repeat(3, auto);
+    }
 }
