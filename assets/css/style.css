@@ -1,6 +1,6 @@
 html {
     min-height: 100vh;
-    cursor: url("/assets/cursors/katana.png"), auto;
+    cursor: url("/assets/cursors/ninjastar.png"), auto;
 }
 
 body {
@@ -52,7 +52,7 @@ body {
 }
 
 .card:hover {
-    cursor: url("/assets/cursors/katana.png"), auto;
+    cursor: url("/assets/cursors/ninjastar.png"), auto;
 }
 
 .card-face {

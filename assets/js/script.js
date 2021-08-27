@@ -47,6 +47,14 @@ class NinjaFlip {
         this.matchedCards = [];
         this.busy = true;
     }
+    flipCard(card) {
+        if(this.canFlipCard(card)) {
+            this.audioController.flip();
+            this.totalClicks++;
+            this.flipper.innerText = this.totalClicks;
+        }
+    }
+
     canFlipCard(card) {
         return true;
         //return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;
@@ -56,17 +64,18 @@ class NinjaFlip {
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
+    let game = new NinjaFlip(100, cards);
 
     overlays.forEach(overlay => {
         overlay.addEventListener('click', () => {
             overlay.classList.remove('visible');
-            // game.startGame();
+            game.startGame();
            
         });
     });
     cards.forEach(card => {
         card.addEventListener('click', () => {
-            // game.flipCard(card);
+             game.flipCard(card);
         });
     });
 }
