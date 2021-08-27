@@ -4,7 +4,7 @@ class AudioController {
         this.flipSound = new Audio('assets/audio/flip.wav');
         this.matchSound = new Audio('assets/audio/match.mp3');
         this.winnerSound = new Audio('assets/audio/winner.mp3');
-        this.gameoverSound = new Audio('assets/audio/game_over.mp3');
+        this.gameOverSound = new Audio('assets/audio/game_over.mp3');
         this.backingMusic.volume = 0.5;
         this.backingMusic.loop = true;
     }
@@ -14,6 +14,20 @@ class AudioController {
     stopMusic() {
         this.backingMusic.pause();
         this.backingMusic.currentTime = 0;
+    }
+    flip() {
+        this.flipSound.play();
+    }
+    match() {
+        this.matchSound.play();
+    }
+    winner() {
+        this.stopMusic();
+        this.winnerSound.play();
+    }
+    gameOver() {
+        this.stopMusic();
+        this.gameOverSound.play();
     }
 }
 
