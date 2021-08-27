@@ -52,6 +52,7 @@ class NinjaFlip {
             this.audioController.flip();
             this.totalClicks++;
             this.flipper.innerText = this.totalClicks;
+            card.classList.add('visible');
         }
     }
 
