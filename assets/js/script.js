@@ -40,7 +40,17 @@ class NinjaFlip {
         this.flipper = document.getElementById('flips');
         this.audioController = new AudioController();
     }
-   
+    startGame() {
+        this.cardToCheck = null;
+        this.totalClicks = 0;
+        this.timeRemaining = this.totalTime;
+        this.matchedCards = [];
+        this.busy = true;
+    }
+    canFlipCard(card) {
+        return true;
+        //return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;
+    }
 }
 
 function ready() {
