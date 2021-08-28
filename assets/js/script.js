@@ -88,10 +88,20 @@ class NinjaFlip {
     cardMatch(card1, card2) {
         this.matchedCards.push(card1);
         this.matchedCards.push(card2);
+        card1.classList.add('matched');
+        card2.classList.add('matched');
+        this.audioController.match();
+        if(this.matchedCards.length === this.cardsArray)
+        this.winner();
     }
 
     cardMisMatch(card) {
-
+        this.busy = true;
+        setTimeout(() => {
+            card1.classList.remove('visible');
+            card2.classList.remove('visible');
+            this.busy = false;
+        }, 1000);
     }
 
     getCardType(card) {
@@ -104,7 +114,7 @@ class NinjaFlip {
             this.timer.innerText = this.timeRemaining;
             if(this.timeRemaining === 0)
                this.gameOver();
-        }, 1000);
+        }, 1000); 
     }
 
     gameOver() {
