@@ -46,6 +46,7 @@ class NinjaFlip {
         this.timeRemaining = this.totalTime;
         this.matchedCards = [];
         this.busy = true;
+        this.shuffleCards();
     }
     flipCard(card) {
         if(this.canFlipCard(card)) {
@@ -61,8 +62,8 @@ class NinjaFlip {
     shuffleCards() {
         for(let i = this.cardsArray.length - 1; i > 0; i--) {
             let randIndex = Math.floor(Math.random() * (i+1)); 
-            this.cardsArray[randomIndex].style.order = i;
-            this.cardsArray[i].style.order = randomIndex;
+            this.cardsArray[randIndex].style.order = i;
+            this.cardsArray[i].style.order = randIndex;
 
         }
     }
