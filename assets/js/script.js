@@ -71,8 +71,31 @@ class NinjaFlip {
             this.flipper.innerText = this.totalClicks;
             card.classList.add('visible');
 
-            // if statement
+            if(this.cardToCheck)
+                this.checkForCardMatch(card);
+            else
+                this.cardToCheck = card;
         }
+    }
+
+    checkForCardMatch(card) {
+        if(this.getCardType(card) === this.getCardType(this.cardToCheck))
+        this.cardMatch(card, this.cardToCheck);
+        else
+            this.cardMisMatch(card, this.cardToCheck);
+    }
+
+    cardMatch(card1, card2) {
+        this.matchedCards.push(card1);
+        this.matchedCards.push(card2);
+    }
+
+    cardMisMatch(card) {
+
+    }
+
+    getCardType(card) {
+        return card.getElementsByClassName('card-image')[0].src;
     }
 
     startCountDown() {
