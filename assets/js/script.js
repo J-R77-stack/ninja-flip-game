@@ -90,6 +90,12 @@ class NinjaFlip {
         document.getElementById('game-over-text').classList.add('visible');
     }
 
+    winner() {
+        clearInterval(this.countDown);
+        this.audioController.winner();
+        document.getElementById('winner-text').classList.add('visible');
+    }
+
     shuffleCards() {
         for(let i = this.cardsArray.length - 1; i > 0; i--) {
             let randIndex = Math.floor(Math.random() * (i+1)); 
