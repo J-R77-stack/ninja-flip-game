@@ -50,7 +50,7 @@ class NinjaFlip {
         setTimeout(() => {
             this.audioController.startMusic();
             this.shuffleCards();
-            this.countdown = this.startCountdown();
+            this.countDown = this.startCountDown();
             this.busy = false;
         }, 500);
         this.hideCards();
@@ -73,6 +73,19 @@ class NinjaFlip {
 
             // if statement
         }
+    }
+
+    startCountDown() {
+        return setInterval(() => {
+            this.timeRemaining--;
+            this.timer.innerText = this.timeRemaining;
+            if(this.timeRemaining === 0)
+               this.gameOver();
+        }, 1000);
+    }
+
+    gameOver() {
+        clearInterval(this.countDown);
     }
 
     shuffleCards() {
