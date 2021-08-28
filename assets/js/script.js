@@ -83,6 +83,8 @@ class NinjaFlip {
         this.cardMatch(card, this.cardToCheck);
         else
             this.cardMisMatch(card, this.cardToCheck);
+
+            this.cardToCheck = null;
     }
 
     cardMatch(card1, card2) {
@@ -91,11 +93,11 @@ class NinjaFlip {
         card1.classList.add('matched');
         card2.classList.add('matched');
         this.audioController.match();
-        if(this.matchedCards.length === this.cardsArray)
+        if(this.matchedCards.length === this.cardsArray.length)
         this.winner();
     }
 
-    cardMisMatch(card) {
+    cardMisMatch(card1, card2) {
         this.busy = true;
         setTimeout(() => {
             card1.classList.remove('visible');
@@ -139,15 +141,14 @@ class NinjaFlip {
     }
 
     canFlipCard(card) {
-        return true;
-        //return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;
+        return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;
     }
 }
 
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
-    let game = new NinjaFlip(100, cards);
+    let game = new NinjaFlip(50, cards);
 
     overlays.forEach(overlay => {
         overlay.addEventListener('click', () => {
